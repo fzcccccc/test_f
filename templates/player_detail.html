@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2 style="text-align: center; margin-bottom: 30px; color: var(--secondary-color); font-size: 2em; font-weight: 700;">玩家详情</h2>
+    
+    <div class="detail-container">
+        <div class="detail-header">
+            <div class="detail-image">
+                {% if player.image_filename %}
+                    <img src="{{ url_for('static', filename='uploads/' ~ player.image_filename) }}" alt="{{ player.name }}">
+                {% else %}
+                    <img src="{{ url_for('static', filename='placeholder.png') }}" alt="暂无图片">
+                {% endif %}
+            </div>
+            
+            <div class="detail-info">
+                <h3>{{ player.name }}</h3>
+                <div class="school">{{ player.school }}</div>
+            </div>
+        </div>
+        
+        {% if player.video_filename %}
+            <div class="video-container" style="margin: 30px 0; text-align: center; width: 100%;">
+                <h4 style="margin-bottom: 20px; color: var(--secondary-color);">个人视频展示</h4>
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <video 
+                        controls 
+                        width="100%" 
+                        height="auto" 
+                        preload="metadata" 
+                        playsinline 
+                        style="border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);"
+                    >
+                        <!-- 尝试多种常见视频格式 -->
+                        <source src="{{ url_for('static', filename='uploads/' ~ player.video_filename) }}" type="video/mp4">
+                        <source src="{{ url_for('static', filename='uploads/' ~ player.video_filename) }}" type="video/webm">
+                        <source src="{{ url_for('static', filename='uploads/' ~ player.video_filename) }}" type="video/ogg">
+                        您的浏览器不支持视频播放，请尝试使用其他浏览器或更新您的浏览器版本。
+                    </video>
+                </div>
+            </div>
+        {% endif %}
+        
+        <div class="detail-description">
+            <p>{{ player.description }}</p>
+        </div>
+        
+        <div class="detail-actions">
+            <a href="{{ url_for('edit_player', player_id=player.id) }}" class="btn btn-secondary">编辑信息</a>
+            <form action="{{ url_for('delete_player', player_id=player.id) }}" method="POST" style="display: inline;">
+                <button type="submit" class="btn btn-danger" onclick="return confirm('确定要删除这个玩家吗？相关的图片和视频也会被删除。')">删除玩家</button>
+            </form>
+            <a href="{{ url_for('index') }}" class="btn">返回列表</a>
+        </div>
+    </div>
+{% endblock %}

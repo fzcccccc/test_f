@@ -1,0 +1,68 @@
+# UI风格切换指南
+
+感谢您选择星愿系统的UI风格！以下是如何应用不同UI风格的详细步骤：
+
+## 风格选项概览
+
+目前已为您准备了三种风格：
+1. **现代简约风格**（系统当前使用）
+2. **暗黑模式风格**（提供舒适的夜间使用体验）
+3. **活力多彩风格**（展现更活泼、现代的视觉效果）
+
+## 应用不同UI风格的步骤
+
+### 方法一：直接替换内联CSS（简单快捷）
+
+1. 打开项目文件夹 `d:\test\templates`
+2. 使用文本编辑器（如记事本、VS Code等）打开 `base.html` 文件
+3. 找到 `<style>` 标签内的所有CSS代码
+4. 根据您想要应用的风格，将对应文件的内容复制粘贴到 `<style>` 标签内
+   - 暗黑模式：使用 `d:\test\dark_mode_style.css` 文件内容
+   - 活力多彩风格：使用 `d:\test\vibrant_style.css` 文件内容
+5. 保存文件并刷新网页即可看到新的UI风格
+
+### 方法二：引入外部CSS文件（推荐，便于维护）
+
+1. 打开项目文件夹 `d:\test\templates`
+2. 使用文本编辑器打开 `base.html` 文件
+3. 在 `<head>` 标签内，找到原有的 `<style>` 标签
+4. 将 `<style>` 标签替换为链接到外部CSS文件的 `<link>` 标签
+
+   **例如，切换到暗黑模式：**
+   ```html
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>星愿</title>
+       <link rel="stylesheet" href="../dark_mode_style.css">
+   </head>
+   ```
+
+   **或者切换到活力多彩风格：**
+   ```html
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>星愿</title>
+       <link rel="stylesheet" href="../vibrant_style.css">
+   </head>
+   ```
+
+5. 保存文件并刷新网页即可看到新的UI风格
+
+## 自定义风格
+
+如果您对现有风格不满意，也可以根据自己的喜好进行自定义修改：
+
+1. 复制任一风格文件作为基础
+2. 使用文本编辑器打开并修改颜色、字体、间距等参数
+3. 按照上述步骤应用自定义风格
+
+## 注意事项
+
+1. 切换风格前建议备份原有的 `base.html` 文件
+2. 不同风格可能需要调整部分HTML结构以达到最佳效果
+3. 如果应用新风格后出现布局问题，可以尝试清除浏览器缓存后刷新页面
+4. 如需其他定制化风格，请随时告知我们
+
+希望您喜欢新的UI风格！如有任何问题，请随时联系我们获取帮助。

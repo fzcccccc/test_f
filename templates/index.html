@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2 style="text-align: center; margin-bottom: 30px; color: var(--secondary-color); font-size: 2em; font-weight: 700;">百业玩家列表</h2>
+    
+    {% if players %}
+        <div class="player-grid">
+            {% for player in players %}
+                <div class="player-card">
+                    <div class="player-card-image">
+                        {% if player.image_filename %}
+                            <img src="{{ url_for('static', filename='uploads/' ~ player.image_filename) }}" alt="{{ player.name }}">
+                        {% else %}
+                            <img src="{{ url_for('static', filename='placeholder.png') }}" alt="暂无图片">
+                        {% endif %}
+                    </div>
+                    <div class="player-card-content">
+                        <h3>{{ player.name }}</h3>
+                        <div class="school">{{ player.school }}</div>
+                        <p>{{ player.description[:100] }}...</p>
+                        <a href="{{ url_for('player_detail', player_id=player.id) }}" class="btn">查看详情</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="no-players">
+            <h3>暂无百业玩家信息</h3>
+            <p>邀请您添加第一位百业玩家，开启丰富多彩的游戏人生</p>
+            <a href="{{ url_for('add_player') }}" class="btn">添加玩家</a>
+        </div>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,151 @@
+/* 暗黑模式样式 - 星愿系统 */
+
+:root {
+    --primary-color: #9b59b6; /* 紫色作为主色调 */
+    --primary-light: #342040; /* 主色调浅色版 */
+    --secondary-color: #bdc3c7; /* 浅灰色作为次要文字 */
+    --secondary-light: #2c3e50; /* 次要背景色 */
+    --text-color: #ecf0f1; /* 主要文字颜色 */
+    --text-light: #95a5a6; /* 次要文字颜色 */
+    --background-color: #1a1a1a; /* 深色背景 */
+    --card-background: #2c3e50; /* 卡片背景 */
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* 更深的阴影 */
+    --border-radius: 12px;
+    --border-color: #34495e; /* 边框颜色 */
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    background-image: none; /* 移除背景图案 */
+}
+
+/* 头部样式 */
+header {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2c3e50 100%);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+header::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+h1, header p {
+    color: var(--text-color);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* 导航栏样式 */
+.nav {
+    background-color: var(--card-background);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.nav a {
+    color: var(--text-color);
+}
+
+.nav a:hover {
+    color: var(--primary-color);
+    background-color: rgba(155, 89, 182, 0.1);
+}
+
+.nav a::after {
+    background-color: var(--primary-color);
+}
+
+/* 玩家卡片样式 */
+.player-card {
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+}
+
+.player-card h3 {
+    color: var(--text-color);
+}
+
+.player-card .school {
+    color: var(--primary-color);
+}
+
+/* 表单样式 */
+.form-container, .detail-container {
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+}
+
+.form-group label {
+    color: var(--text-color);
+}
+
+.form-group input, .form-group select, .form-group textarea {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(155, 89, 182, 0.2);
+}
+
+/* 按钮样式 */
+.btn {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn:hover {
+    background-color: #8e44ad;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(155, 89, 182, 0.4);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-light);
+    color: var(--text-color);
+}
+
+.btn-secondary:hover {
+    background-color: #34495e;
+}
+
+/* 页脚样式 */
+footer {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2c3e50 100%);
+}
+
+/* 链接样式 */
+a {
+    color: var(--primary-color);
+}
+
+a:hover {
+    color: #8e44ad;
+}
+
+/* 视频播放器样式 */
+video {
+    background-color: #000;
+    border-radius: var(--border-radius);
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--secondary-light);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-light);
+}
